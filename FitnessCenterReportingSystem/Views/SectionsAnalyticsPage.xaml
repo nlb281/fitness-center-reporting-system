@@ -47,6 +47,7 @@
                             Margin="0,0,10,0"
                             Background="#2C7DA0"
                             Foreground="White"
+                            BorderThickness="0"
                             Click="ReloadButton_Click"/>
 
                     <Button Content="Экспорт CSV"
@@ -54,6 +55,7 @@
                             Height="40"
                             Background="#10B981"
                             Foreground="White"
+                            BorderThickness="0"
                             Click="ExportCsvButton_Click"/>
                 </StackPanel>
 
@@ -68,12 +70,13 @@
 
                         <StackPanel>
                             <TextBlock Text="Популярная секция"
-                                       Foreground="White"/>
+                                       Foreground="White"
+                                       FontSize="14"/>
 
                             <TextBlock Text="{Binding MostPopularSection}"
                                        Foreground="White"
-                                       FontWeight="Bold"
-                                       FontSize="22"/>
+                                       FontSize="28"
+                                       FontWeight="Bold"/>
                         </StackPanel>
 
                     </Border>
@@ -85,12 +88,13 @@
 
                         <StackPanel>
                             <TextBlock Text="Всего посещений"
-                                       Foreground="White"/>
+                                       Foreground="White"
+                                       FontSize="14"/>
 
                             <TextBlock Text="{Binding TotalVisitors}"
                                        Foreground="White"
-                                       FontWeight="Bold"
-                                       FontSize="22"/>
+                                       FontSize="28"
+                                       FontWeight="Bold"/>
                         </StackPanel>
 
                     </Border>
@@ -102,12 +106,13 @@
 
                         <StackPanel>
                             <TextBlock Text="Количество секций"
-                                       Foreground="White"/>
+                                       Foreground="White"
+                                       FontSize="14"/>
 
                             <TextBlock Text="{Binding SectionsCount}"
                                        Foreground="White"
-                                       FontWeight="Bold"
-                                       FontSize="22"/>
+                                       FontSize="28"
+                                       FontWeight="Bold"/>
                         </StackPanel>
 
                     </Border>
