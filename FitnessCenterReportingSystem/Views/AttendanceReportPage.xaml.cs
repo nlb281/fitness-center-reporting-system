@@ -60,7 +60,7 @@ public partial class AttendanceReportPage : Page
 
             MessageBox.Show(
                 "Отчет успешно экспортирован",
-                "Экспорт",
+                "Экспорт CSV",
                 MessageBoxButton.OK,
                 MessageBoxImage.Information);
         }
@@ -68,7 +68,7 @@ public partial class AttendanceReportPage : Page
         {
             MessageBox.Show(
                 ex.Message,
-                "Ошибка",
+                "Ошибка экспорта",
                 MessageBoxButton.OK,
                 MessageBoxImage.Error);
         }

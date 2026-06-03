@@ -33,4 +33,8 @@ public partial class MainWindow : Window
     {
         MainFrame.Navigate(new SectionsAnalyticsPage());
     }
+    private void Dashboard_Click(object sender, RoutedEventArgs e)
+    {
+        MainFrame.Navigate(new DashboardPage());
+    }
 }

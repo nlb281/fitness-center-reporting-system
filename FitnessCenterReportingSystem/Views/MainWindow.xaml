@@ -42,6 +42,15 @@
                     FontSize="14"
                     FontWeight="SemiBold"
                     Click="Sections_Click"/>
+            <Button Content="Дашборд"
+                    Margin="10"
+                    Height="45"
+                    Background="#2C7DA0"
+                    Foreground="White"
+                    BorderBrush="Transparent"
+                    FontSize="14"
+                    FontWeight="SemiBold"
+                    Click="Dashboard_Click"/>
         </StackPanel>
 
         <Frame x:Name="MainFrame"

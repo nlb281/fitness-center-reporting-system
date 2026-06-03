@@ -46,13 +46,15 @@
                             Height="40"
                             Margin="0,0,10,0"
                             Background="#2C7DA0"
-                            Foreground="White"/>
+                            Foreground="White"
+                            Click="ReloadButton_Click"/>
 
                     <Button Content="Экспорт CSV"
                             Width="160"
                             Height="40"
                             Background="#10B981"
-                            Foreground="White"/>
+                            Foreground="White"
+                            Click="ExportCsvButton_Click"/>
                 </StackPanel>
 
                 <UniformGrid Grid.Row="2"
