@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FitnessCenterReportingSystem.Views;
 
 namespace FitnessCenterReportingSystem;
 
@@ -19,5 +20,17 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+        
+        MainFrame.Navigate(new AttendanceReportPage());
+    }
+    
+    private void Attendance_Click(object sender, RoutedEventArgs e)
+    {
+        MainFrame.Navigate(new AttendanceReportPage());
+    }
+
+    private void Sections_Click(object sender, RoutedEventArgs e)
+    {
+        MainFrame.Navigate(new SectionsAnalyticsPage());
     }
 }
