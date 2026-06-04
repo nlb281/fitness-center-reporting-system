@@ -134,6 +134,7 @@
 
                         <wpf:CartesianChart
                             Series="{Binding VisitorsSeries}"
+                            XAxes="{Binding XAxes}"
                             Height="400"/>
 
                     </StackPanel>

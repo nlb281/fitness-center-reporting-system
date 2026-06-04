@@ -67,7 +67,7 @@ public class DashboardViewModel : INotifyPropertyChanged
 
     public ISeries[] VisitorsSeries { get; set; } = [];
 
-    public string[] SectionLabels { get; set; } = [];
+    public Axis[] XAxes { get; set; } = [];
 
     public DashboardViewModel()
     {
@@ -82,28 +82,27 @@ public class DashboardViewModel : INotifyPropertyChanged
             .Include(v => v.Section)
             .ToList();
 
-        TotalVisitors = visits.Sum(x => x.AttendedVisitors);
+        TotalVisitors = visits.Sum(v => v.AttendedVisitors);
 
         TotalSessions = visits.Count;
 
         SectionsCount = db.Sections.Count();
 
-        var totalRegistered = visits.Sum(x => x.RegisteredVisitors);
+        var totalRegistered = visits.Sum(v => v.RegisteredVisitors);
 
-        AttendancePercent =
-            totalRegistered == 0
-                ? 0
-                : Math.Round(
-                    (double)TotalVisitors /
-                    totalRegistered * 100,
-                    1);
+        AttendancePercent = totalRegistered == 0
+            ? 0
+            : Math.Round(
+                (double)TotalVisitors /
+                totalRegistered * 100,
+                1);
 
         var sectionStats = visits
             .GroupBy(v => v.Section.Name)
             .Select(g => new
             {
                 SectionName = g.Key,
-                Visitors = g.Sum(x => x.AttendedVisitors)
+                Visitors = g.Sum(v => v.AttendedVisitors)
             })
             .OrderByDescending(x => x.Visitors)
             .ToList();
@@ -121,12 +120,20 @@ public class DashboardViewModel : INotifyPropertyChanged
             }
         ];
 
-        SectionLabels = sectionStats
-            .Select(x => x.SectionName)
-            .ToArray();
+        XAxes =
+        [
+            new Axis
+            {
+                Labels = sectionStats
+                    .Select(x => x.SectionName)
+                    .ToArray(),
+
+                IsVisible = false
+            }
+        ];
 
         OnPropertyChanged(nameof(VisitorsSeries));
-        OnPropertyChanged(nameof(SectionLabels));
+        OnPropertyChanged(nameof(XAxes));
     }
 
     public event PropertyChangedEventHandler? PropertyChanged;
